@@ -1,7 +1,6 @@
 <template>
-  Домашня сторінка
+  Послуги
 </template>
 
 <script lang="ts" setup>
-// 
 </script>
