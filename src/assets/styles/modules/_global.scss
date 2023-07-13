@@ -1,0 +1,35 @@
+html {
+  font-family: $base-font;
+  font-weight: $base-font-weight;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #091B1A;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background-color: $base-bg-color;
+  color: #fff;
+  font-size: $base-font-size;
+  overflow-x: hidden;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  &:hover {
+    color: $base-color;
+  }
+}
+
+a, button {
+  transition: ease-in-out .3s;
+  &.btn, &.btn-transparent, &.inline-link {
+    .icon {
+      margin-left: 10px;
+    }
+  }
+}
