@@ -1,9 +1,9 @@
 <template>
+  <the-header />
   <v-main>
-    <the-header />
     <router-view />
-    <the-footer />
   </v-main>
+  <the-footer />
 </template>
 
 <script lang="ts" setup>
