@@ -1,8 +1,8 @@
 <template>
-  <v-app-bar app :color="isScrolled ? 'grey-darken-4' : 'transparent'" class="header" elevation="0">
+  <v-app-bar app :density="isScrolled || isMobile || (isMobile && !isScrolled && sidebar) ? 'default' : 'prominent'" :class="isScrolled || (isMobile && !isScrolled && sidebar) ? 'bg-grey-darken-4' : 'bg-transparent'" class="header" elevation="0">
     <v-container class="d-flex py-0 h-100">
       <v-row align="center" no-gutters>
-        <router-link to="/" class="d-flex align-center h-100" :class="isScrolled ? 'text-white' : 'text-black'">
+        <router-link to="/" class="d-flex align-center h-100" :class="isScrolled || (isMobile && !isScrolled && sidebar) ? 'text-white' : 'text-black'">
           <logo-icon />
         </router-link>
         <v-spacer />
@@ -21,7 +21,7 @@
       </v-row>
     </v-container>
   </v-app-bar>
-  <v-navigation-drawer v-model="sidebar" v-if="isMobile" app location="right">
+  <v-navigation-drawer v-model="sidebar" v-if="isMobile" app location="right" class="bg-grey-darken-4">
     <v-list>
       <v-list-item
         v-for="(item, index) in menuItems"
@@ -37,8 +37,22 @@
 </template>
 
 <style lang="scss">
-  .header {
-    transition: background-color .3s ease!important;
+  .v-toolbar {
+    transition: background-color 0.3s ease, height 0.3s ease!important;
+  }
+  .v-ripple__container {
+    display: none!important;
+  }
+  .v-toolbar__content {
+    .v-btn {
+      &:hover,
+      &--active {
+        color: #1195FF;
+        .v-btn__overlay {
+          background: transparent;
+        }
+      } 
+    }
   }
 </style>
 
@@ -53,7 +67,9 @@ const isScrolled = ref(false);
 const { menuItems, isMobile } = useMenu(
   [
     { title: 'Home', path: '/' },
+    { title: 'About Us', path: '/about' },
     { title: 'Services', path: '/services' },
+    { title: 'Contact', path: '/contact' },
   ],
 );
 

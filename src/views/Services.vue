@@ -1,5 +1,5 @@
 <template>
-  Послуги
+  Services Page
 </template>
 
 <script lang="ts" setup>

@@ -1,5 +1,5 @@
 <template>
-  Page not found!
+  Contact Page
 </template>
 
 <script lang="ts" setup>

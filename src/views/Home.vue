@@ -1,7 +1,5 @@
 <template>
-  <div style="min-height: 200vh;">
-    Домашня сторінка
-  </div>
+  Homepage
 </template>
 
 <script lang="ts" setup>
