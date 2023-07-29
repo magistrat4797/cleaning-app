@@ -2,7 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 const routerOptions = [
   { path: "/", alias: "/home", view: "Home", meta: { requiresAuth: true } },
+  { path: "/about", view: "About" },
   { path: "/services", view: "Services" },
+  { path: "/contact", view: "Contact" },
   { path: "/:pathMatch(.*)*", view: "NotFound" }
 ];
 
