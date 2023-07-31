@@ -39,7 +39,7 @@
     v-if="isMobile"
     app
     location="right"
-    class="bg-grey-darken-4"
+    class="bg-secondary"
   >
     <v-list>
       <v-list-item

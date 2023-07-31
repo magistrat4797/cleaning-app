@@ -26,3 +26,11 @@ a,
 button {
   transition: ease-in-out 0.3s !important;
 }
+
+.font-default {
+  font-family: $base-font !important;
+}
+
+.v-container {
+  max-width: 1200px !important;
+}

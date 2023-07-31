@@ -1,12 +1,7 @@
 <template>
   <v-footer class="py-5 bg-secondary">
     <v-container class="py-0">
-      <v-row no-gutters>
-        <newsletter-box
-          :title="'Subscribe To Our News Letter'"
-          :text="'Subscribe our news letter to get latest news and updates'"
-        />
-      </v-row>
+      <v-row justify="center" no-gutters> </v-row>
       <v-row align="center" no-gutters>
         <router-link to="/" class="d-flex align-center h-100 text-white">
           <logo-icon />
@@ -33,7 +28,6 @@
 <script setup lang="ts">
 import LogoIcon from "@/assets/images/logo.svg";
 import { MenuItem } from "@/models/MenuItem";
-import NewsletterBox from "@/components/NewsletterBox.vue";
 
 const menuItems: MenuItem[] = [
   { title: "Home", path: "/" },
