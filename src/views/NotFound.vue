@@ -1,6 +1,3 @@
-<template>
-  Page not found!
-</template>
+<template>Page not found!</template>
 
-<script lang="ts" setup>
-</script>
+<script lang="ts" setup></script>
