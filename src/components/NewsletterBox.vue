@@ -1,20 +1,21 @@
 <template>
   <div class="newsletter-box py-8">
     <v-container class="py-0">
-      <div class="bg-primary py-8 px-12 rounded">
-        <v-row align="center">
-          <v-col>
+      <div class="bg-primary py-6 px-12 rounded-lg">
+        <v-row align="center" no-gutters>
+          <v-col class="pa-0" cols="6">
             <div v-if="slots.title">
-              <h3 class="newsletter__title font-default font-weight-bold">
+              <h3 class="newsletter__title font-weight-bold">
                 <slot name="title" />
               </h3>
-              <p class="newsletter__text font-default font-weight-medium">
+              <p class="newsletter__text">
                 <slot name="text" />
               </p>
             </div>
           </v-col>
-          <v-col>
-            <form action="">
+          <v-spacer />
+          <v-col class="pa-0" cols="5">
+            <form>
               <v-text-field
                 variant="solo"
                 label="Enter Your Email"

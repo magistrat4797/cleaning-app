@@ -1,33 +1,129 @@
 <template>
-  <v-footer class="py-5 bg-secondary">
+  <v-footer class="px-0 py-10 bg-secondary">
     <v-container class="py-0">
-      <v-row justify="center" no-gutters> </v-row>
       <v-row align="center" no-gutters>
-        <router-link to="/" class="d-flex align-center h-100 text-white">
-          <logo-icon />
-        </router-link>
+        <v-col cols="4">
+          <v-row no-gutters>
+            <v-col>
+              <router-link to="/" class="d-flex align-center h-100 text-white">
+                <logo-icon />
+              </router-link>
+            </v-col>
+          </v-row>
+          <v-row no-gutters>
+            <v-col>
+              <div class="py-5">
+                <p class="footer__desc">Amet minim mollit non deserunt ullamc est sit aliqua dolor  amet sint. Amet minim mollit non deserunt ullamco est sit aliqua.</p>
+              </div>
+            </v-col>
+          </v-row>
+          <v-row no-gutters>
+            <v-col>
+              <v-list class="d-flex pa-0 overflow-visible" bg-color="transparent">
+                <v-list-item v-for="socialLink in socialLinks" :key="socialLink.name" class="social-links__item pa-0">
+                  <v-btn
+                    :icon="socialLink.icon"
+                    variant="text"
+                    :href="socialLink.url"
+                    target="_blank"
+                    class="social-link bg-primary"
+                    width="43"
+                    height="43"
+                    rounded="lg"
+                  />
+                </v-list-item>
+              </v-list>
+            </v-col>
+          </v-row>
+        </v-col>
         <v-spacer />
-        <v-toolbar-items>
-          <v-btn
-            v-for="(item, index) in menuItems"
-            :key="index"
-            :to="item.path"
-            router
-          >
-            {{ item.title }}
-          </v-btn>
-        </v-toolbar-items>
+        <v-col cols="7">
+          <v-toolbar-items>
+            <v-btn
+              v-for="(item, index) in menuItems"
+              :key="index"
+              :to="item.path"
+              router
+            >
+              {{ item.title }}
+            </v-btn>
+          </v-toolbar-items>
+        </v-col>
       </v-row>
       <v-row no-gutters>
-        Copyright by Cleanex @ 2023. All rights reserved
+        <v-col cols="12">
+          <div class="mt-10">
+            <div class="text-center position-relative copyright-text-block">
+              <p class="d-inline-block px-4 bg-secondary">
+                Copyright © 2023. All rights reserved. Powered by <a href="https://isulyma.netlify.app/" target="_blank">Ioann Sulyma</a>
+              </p>
+            </div>
+          </div>
+        </v-col>
       </v-row>
     </v-container>
   </v-footer>
 </template>
 
+<style lang="scss" scoped>
+@import "@/assets/styles/styles.scss";
+  .footer {
+    &__desc {
+      line-height: 26px;
+    }
+  }
+  .social-links {
+    &__item {
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+  .social-link {
+    &:hover {
+      background: $bg-color-tertiary!important;
+    }
+  }
+
+  .copyright-text {
+    &-block {
+      z-index: 1;
+      &:before, &:after {
+        content: '';
+        position: absolute;
+        background: rgba($bg-color-tertiary, 0.2);
+        height: 1px;
+        top: 50%;
+        width: 100%;
+        transform: translateY(-50%);
+        z-index: -1;
+      }
+      &:before {
+        left: -50%;
+      }
+      &:after {
+        right: -50%;
+      }
+    }
+  }
+</style>
+
 <script setup lang="ts">
 import LogoIcon from "@/assets/images/logo.svg";
 import { MenuItem } from "@/models/MenuItem";
+
+const socialLinks = [
+  {
+    name: "GitHub",
+    url: "https://github.com/magistrat4797",
+    icon: "mdi-github",
+  },
+  {
+    name: "Linkedin",
+    url: "https://www.linkedin.com/in/isulyma/",
+    icon: "mdi-linkedin",
+  },
+];
 
 const menuItems: MenuItem[] = [
   { title: "Home", path: "/" },
