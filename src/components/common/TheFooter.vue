@@ -78,7 +78,6 @@
         </v-col>
       </v-row>
     </v-container>
-    {{ navLinkHeight }}
   </v-footer>
 </template>
 
