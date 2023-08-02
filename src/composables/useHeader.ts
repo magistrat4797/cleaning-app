@@ -3,7 +3,7 @@ import { useDisplay } from "vuetify";
 import { MenuItem } from "@/models/MenuItem";
 import useScroll from "@/composables/useScroll";
 
-export default function useMenu(menuItems: MenuItem[]) {
+export default function useHeader(menuItems: MenuItem[]) {
   const { isScrolled } = useScroll();
   const { mobile } = useDisplay();
   const isMobile = computed(() => mobile.value);

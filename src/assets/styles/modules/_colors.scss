@@ -1,3 +1,9 @@
-$bg-color-primary: #1195FF;
-$bg-color-secondary: #1E2746;
-$bg-color-tertiary: #A8C1FF;
+$color-primary: #1195FF;
+$color-secondary: #1E2746;
+$color-tertiary: #A8C1FF;
+$color-grey: #BCBCBC;
+
+$bg-color-primary: $color-primary;
+$bg-color-secondary: $color-secondary;
+$bg-color-tertiary: $color-tertiary;
+$bg-color-grey: $color-grey;

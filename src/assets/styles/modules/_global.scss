@@ -15,11 +15,11 @@ body {
 }
 
 a {
-  color: $bg-color-tertiary;
+  color: $color-tertiary;
   text-decoration: none;
   transition: .3s ease-in-out;
   &:hover {
-    color: $bg-color-primary;
+    color: $color-primary;
   }
 }
 
@@ -34,4 +34,30 @@ button {
 
 .v-container {
   max-width: 1200px !important;
+}
+
+$breakpoints: (
+  '' : 0px,
+  'sm': 600px,
+  'md': 960px,
+  'lg': 1280px, 
+  'xl': 1920px
+);
+
+$sizes: 18, 20;
+
+@each $name, $size in $breakpoints {
+  @each $fontsize in $sizes {
+    @if $name == '' {
+      .text-#{$fontsize} {
+        font-size: #{$fontsize}px !important;
+      }
+    } @else {
+      .text-#{$name}-#{$fontsize} {
+        @media (min-width: $size) {
+          font-size: #{$fontsize}px !important;
+        }
+      }
+    }
+  }
 }

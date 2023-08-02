@@ -1,5 +1,5 @@
 <template>
-  <v-footer class="px-0 py-10 bg-secondary">
+  <v-footer class="footer px-0 py-10 bg-secondary">
     <v-container class="py-0">
       <v-row align="center" no-gutters>
         <v-col cols="4">
@@ -38,16 +38,32 @@
         </v-col>
         <v-spacer />
         <v-col cols="7">
-          <v-toolbar-items>
-            <v-btn
-              v-for="(item, index) in menuItems"
-              :key="index"
-              :to="item.path"
-              router
-            >
-              {{ item.title }}
-            </v-btn>
-          </v-toolbar-items>
+          <v-row>
+            <v-col>
+              <span class="footer-nav__item-title d-block mb-4 text-md-20 text-white position-relative font-weight-medium pb-2">Useful Links</span>
+              <v-list class="footer-nav pa-0 text-white" bg-color="transparent">
+                <v-list-item
+                    v-for="(item, index) in menuItems"
+                    :key="index"
+                    class="justify-start pa-0"
+                    :style="{'min-height': navLinkHeight}"
+                >
+                  <v-btn
+                    :to="item.path"
+                    router
+                    :flat="false"
+                    :ripple="false"
+                    variant="text"
+                    block
+                    class="footer-nav__link px-0 text-grey text-capitalize text-md-18 font-weight-regular"
+                  >
+                    {{ item.title }}
+                  </v-btn>
+                </v-list-item>
+              </v-list>
+            </v-col>
+            <v-col></v-col>
+          </v-row>
         </v-col>
       </v-row>
       <v-row no-gutters>
@@ -62,6 +78,7 @@
         </v-col>
       </v-row>
     </v-container>
+    {{ navLinkHeight }}
   </v-footer>
 </template>
 
@@ -71,46 +88,73 @@
     &__desc {
       line-height: 26px;
     }
-  }
-  .social-links {
-    &__item {
-      &:not(:last-child) {
-        margin-right: 20px;
+    .v-btn {
+      &:deep(.v-btn__overlay) {
+        background: transparent;
+      }
+      &:hover {
+        color: $color-primary!important;
+      }
+      &--active {
+        color: #fff!important;
+      }
+    }
+    .social-links {
+      &__item {
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+      }
+    }
+    .social-link {
+      &:hover {
+        background: $bg-color-tertiary!important;
+      }
+    }
+
+    .copyright-text {
+      &-block {
+        z-index: 1;
+        &:before, &:after {
+          content: '';
+          position: absolute;
+          background: rgba($bg-color-tertiary, 0.2);
+          height: 1px;
+          top: 50%;
+          width: 100%;
+          transform: translateY(-50%);
+          z-index: -1;
+        }
+        &:before {
+          left: -50%;
+        }
+        &:after {
+          right: -50%;
+        }
       }
     }
   }
-  .social-link {
-    &:hover {
-      background: $bg-color-tertiary!important;
-    }
-  }
-
-  .copyright-text {
-    &-block {
-      z-index: 1;
-      &:before, &:after {
+  .footer-nav {
+    &__item-title {
+      &:after {
         content: '';
         position: absolute;
-        background: rgba($bg-color-tertiary, 0.2);
+        left: 0;
+        bottom: 0;
+        width: 60px;
         height: 1px;
-        top: 50%;
-        width: 100%;
-        transform: translateY(-50%);
-        z-index: -1;
-      }
-      &:before {
-        left: -50%;
-      }
-      &:after {
-        right: -50%;
+        background-color: #fff;
       }
     }
   }
 </style>
 
 <script setup lang="ts">
+import useFooter from "@/composables/useFooter";
 import LogoIcon from "@/assets/images/logo.svg";
 import { MenuItem } from "@/models/MenuItem";
+
+const { navLinkHeight } = useFooter();
 
 const socialLinks = [
   {

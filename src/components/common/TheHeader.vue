@@ -19,13 +19,17 @@
         <v-app-bar-nav-icon
           v-if="isMobile"
           @click="toggleSidebar"
-        ></v-app-bar-nav-icon>
+          :ripple="false"
+        />
         <v-toolbar-items v-else>
           <v-btn
             v-for="(item, index) in menuItems"
             :key="index"
             :to="item.path"
             router
+            :ripple="false"
+            variant="text"
+            :class="textColor"
           >
             <v-icon left v-if="item.icon">{{ item.icon }}</v-icon>
             <span>{{ item.title }}</span>
@@ -35,50 +39,64 @@
     </v-container>
   </v-app-bar>
   <v-navigation-drawer
+    app
     v-model="sidebar"
     v-if="isMobile"
-    app
     location="right"
-    class="bg-secondary"
+    class="sidebar bg-secondary"
+    border="0"
   >
-    <v-list>
+    <v-list class="d-flex flex-column justify-center h-100">
       <v-list-item
         v-for="(item, index) in menuItems"
         :key="index"
-        :to="item.path"
-        router
+        class="pa-0"
       >
-        <v-icon v-if="item.icon">{{ item.icon }}</v-icon>
-        <span>{{ item.title }}</span>
+        <v-btn
+          :to="item.path"
+          router
+          :ripple="false"
+          variant="text"
+          class="h-100"
+          :class="textColor"
+          block
+          rounded="0"
+        >
+          <v-icon left v-if="item.icon">{{ item.icon }}</v-icon>
+          <span>{{ item.title }}</span>
+        </v-btn>
       </v-list-item>
     </v-list>
   </v-navigation-drawer>
 </template>
 
-<style lang="scss">
-.v-toolbar {
-  transition:
-    background-color 0.3s ease,
-    height 0.3s ease !important;
-  &__content {
-    .v-btn {
-      &:hover,
-      &--active {
-        color: #1195ff;
-        .v-btn__overlay {
-          background: transparent;
-        }
-      }
+<style lang="scss" scoped>
+@import "@/assets/styles/styles.scss";
+
+.header,
+.sidebar {
+  .v-btn {
+    &:deep(.v-btn__overlay) {
+      background: transparent;
+    }
+    &:hover,
+    &--active {
+      color: $color-primary!important;
     }
   }
 }
-.v-ripple__container {
-  display: none !important;
+.header {
+  transition: background-color 0.3s ease, height 0.3s ease !important;
+}
+.sidebar {
+  .v-list:deep(.v-list-item__content) {
+    height: 100%;
+  }
 }
 </style>
 
 <script setup lang="ts">
-import useMenu from "@/composables/useMenu";
+import useHeader from "@/composables/useHeader";
 import LogoIcon from "@/assets/images/logo.svg";
 import { MenuItem } from "@/models/MenuItem";
 
@@ -88,6 +106,6 @@ const menuItems: MenuItem[] = [
   { title: "Services", path: "/services" },
   { title: "Contact", path: "/contact" },
 ];
-const { isMobile, density, navColor, textColor, sidebar, toggleSidebar } =
-  useMenu(menuItems);
+
+const { isMobile, density, navColor, textColor, sidebar, toggleSidebar } = useHeader(menuItems);
 </script>
