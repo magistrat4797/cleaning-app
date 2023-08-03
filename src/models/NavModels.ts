@@ -3,6 +3,7 @@ export interface NavItem {
   path: string;
   icon?: string;
   target?: string;
+  isExternal?: boolean;
 }
 
 export interface NavItemGroup {

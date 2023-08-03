@@ -1,7 +1,14 @@
 <template>
   <div class="social-links-block">
-    <v-list class="d-flex pa-0 overflow-visible social-links" bg-color="transparent">
-      <v-list-item v-for="socialLink in socialLinks" :key="socialLink.name" class="social-links__item pa-0">
+    <v-list
+      class="d-flex pa-0 overflow-visible social-links"
+      bg-color="transparent"
+    >
+      <v-list-item
+        v-for="socialLink in socialLinks"
+        :key="socialLink.name"
+        class="social-links__item pa-0"
+      >
         <v-btn
           :icon="socialLink.icon"
           :title="socialLink.name"
@@ -20,18 +27,18 @@
 
 <style lang="scss" scoped>
 @import "@/assets/styles/styles.scss";
-  .social-links {
-    &__item {
-      &:not(:last-child) {
-        margin-right: 20px;
-      }
+.social-links {
+  &__item {
+    &:not(:last-child) {
+      margin-right: 20px;
     }
   }
-  .social-link {
-    &:hover {
-      background: $bg-color-tertiary!important;
-    }
+}
+.social-link {
+  &:hover {
+    background: $bg-color-tertiary !important;
   }
+}
 </style>
 
 <script setup lang="ts">

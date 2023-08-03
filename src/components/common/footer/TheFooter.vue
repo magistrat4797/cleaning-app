@@ -13,7 +13,10 @@
       <v-row no-gutters>
         <v-col cols="12">
           <footer-copyright-block>
-            Copyright © 2023. All rights reserved. Powered by <a href="https://isulyma.netlify.app/" target="_blank">Ioann Sulyma</a>
+            Copyright © 2023. All rights reserved. Powered by
+            <a href="https://isulyma.netlify.app/" target="_blank"
+              >Ioann Sulyma</a
+            >
           </footer-copyright-block>
         </v-col>
       </v-row>
@@ -51,9 +54,22 @@ const links = [
   {
     title: "Contact",
     links: [
-      { title: "(+12) 345 678 912", path: "tel:(+12) 345 678 912" },
-      { title: "info@email.com", path: "mailto:info@email.com" },
-      { title: "82 Victoria St, London", path: "https://goo.gl/maps/VcptuVb9NF8DmMr18", target: "_blank" },
+      {
+        title: "(+12) 345 678 912",
+        path: "tel:(+12) 345 678 912",
+        isExternal: true,
+      },
+      {
+        title: "info@email.com",
+        path: "mailto:info@email.com",
+        isExternal: true,
+      },
+      {
+        title: "82 Victoria St, London",
+        path: "https://goo.gl/maps/VcptuVb9NF8DmMr18",
+        isExternal: true,
+        target: "_blank",
+      },
     ],
   },
 ];

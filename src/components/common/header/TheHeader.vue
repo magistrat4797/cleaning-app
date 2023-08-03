@@ -45,11 +45,7 @@
     border="0"
   >
     <v-list class="d-flex flex-column justify-center h-100">
-      <v-list-item
-        v-for="(item, index) in navItems"
-        :key="index"
-        class="pa-0"
-      >
+      <v-list-item v-for="(item, index) in navItems" :key="index" class="pa-0">
         <v-btn
           :to="item.path"
           router
@@ -79,12 +75,14 @@
     }
     &:hover,
     &--active {
-      color: $color-primary!important;
+      color: $color-primary !important;
     }
   }
 }
 .header {
-  transition: background-color 0.3s ease, height 0.3s ease !important;
+  transition:
+    background-color 0.3s ease,
+    height 0.3s ease !important;
 }
 .sidebar {
   .v-list:deep(.v-list-item__content) {
@@ -105,6 +103,7 @@ const navItems: NavItem[] = [
   { title: "Contact", path: "/contact" },
 ];
 
-const { isMobile, density, navColor, textColor, sidebar, toggleSidebar } = useHeader(navItems);
+const { isMobile, density, navColor, textColor, sidebar, toggleSidebar } =
+  useHeader(navItems);
 </script>
 @/models/NavModels

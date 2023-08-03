@@ -24,9 +24,7 @@ export default function useHeader(navItems: NavItem[]) {
     isDefault.value ? "bg-secondary" : "bg-transparent",
   );
 
-  const textColor = computed(() =>
-    isDefault.value ? "white" : "black",
-  );
+  const textColor = computed(() => (isDefault.value ? "white" : "black"));
 
   return {
     navItems,

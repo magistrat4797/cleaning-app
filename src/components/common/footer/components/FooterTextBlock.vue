@@ -5,9 +5,9 @@
 </template>
 
 <style lang="scss" scoped>
-  .footer {
-    &__text {
-      line-height: 26px;
-    }
+.footer {
+  &__text {
+    line-height: 26px;
   }
+}
 </style>

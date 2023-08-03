@@ -6,9 +6,11 @@ export default function useFooter() {
 
   const navLinkHeight = computed(() => {
     switch (name.value) {
-      case 'lg':
-      case 'xl': return '40px';
-      default: return '35px';
+      case "lg":
+      case "xl":
+        return "40px";
+      default:
+        return "35px";
     }
   });
   return { navLinkHeight };
