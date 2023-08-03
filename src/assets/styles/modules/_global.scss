@@ -35,6 +35,9 @@ button {
 .v-container {
   max-width: 1200px !important;
 }
+.text-none {
+  text-transform: none !important;
+}
 
 $breakpoints: (
   '' : 0px,
@@ -44,7 +47,7 @@ $breakpoints: (
   'xl': 1920px
 );
 
-$sizes: 18, 20;
+$sizes: 16, 18, 20;
 
 @each $name, $size in $breakpoints {
   @each $fontsize in $sizes {

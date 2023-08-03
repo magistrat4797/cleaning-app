@@ -1,9 +1,9 @@
 import { ref, computed } from "vue";
 import { useDisplay } from "vuetify";
-import { MenuItem } from "@/models/MenuItem";
+import { NavItem } from "@/models/NavModels";
 import useScroll from "@/composables/useScroll";
 
-export default function useHeader(menuItems: MenuItem[]) {
+export default function useHeader(navItems: NavItem[]) {
   const { isScrolled } = useScroll();
   const { mobile } = useDisplay();
   const isMobile = computed(() => mobile.value);
@@ -25,11 +25,11 @@ export default function useHeader(menuItems: MenuItem[]) {
   );
 
   const textColor = computed(() =>
-    isDefault.value ? "text-white" : "text-black",
+    isDefault.value ? "white" : "black",
   );
 
   return {
-    menuItems,
+    navItems,
     isMobile,
     density,
     navColor,

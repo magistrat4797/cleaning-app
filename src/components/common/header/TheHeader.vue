@@ -8,33 +8,31 @@
   >
     <v-container class="d-flex py-0 h-100">
       <v-row align="center" no-gutters>
-        <router-link
-          to="/"
-          class="d-flex align-center h-100"
-          :class="textColor"
-        >
-          <logo-icon />
-        </router-link>
+        <v-col>
+          <logo-block :color="textColor" />
+        </v-col>
         <v-spacer />
-        <v-app-bar-nav-icon
-          v-if="isMobile"
-          @click="toggleSidebar"
-          :ripple="false"
-        />
-        <v-toolbar-items v-else>
-          <v-btn
-            v-for="(item, index) in menuItems"
-            :key="index"
-            :to="item.path"
-            router
+        <v-col>
+          <v-app-bar-nav-icon
+            v-if="isMobile"
+            @click="toggleSidebar"
             :ripple="false"
-            variant="text"
-            :class="textColor"
-          >
-            <v-icon left v-if="item.icon">{{ item.icon }}</v-icon>
-            <span>{{ item.title }}</span>
-          </v-btn>
-        </v-toolbar-items>
+          />
+          <v-toolbar-items v-else>
+            <v-btn
+              v-for="(item, index) in navItems"
+              :key="index"
+              :to="item.path"
+              router
+              :ripple="false"
+              variant="text"
+              :class="`text-${textColor}`"
+            >
+              <v-icon left v-if="item.icon">{{ item.icon }}</v-icon>
+              <span>{{ item.title }}</span>
+            </v-btn>
+          </v-toolbar-items>
+        </v-col>
       </v-row>
     </v-container>
   </v-app-bar>
@@ -48,7 +46,7 @@
   >
     <v-list class="d-flex flex-column justify-center h-100">
       <v-list-item
-        v-for="(item, index) in menuItems"
+        v-for="(item, index) in navItems"
         :key="index"
         class="pa-0"
       >
@@ -58,7 +56,7 @@
           :ripple="false"
           variant="text"
           class="h-100"
-          :class="textColor"
+          :class="`text-${textColor}`"
           block
           rounded="0"
         >
@@ -96,16 +94,17 @@
 </style>
 
 <script setup lang="ts">
-import useHeader from "@/composables/useHeader";
-import LogoIcon from "@/assets/images/logo.svg";
-import { MenuItem } from "@/models/MenuItem";
+import useHeader from "@/components/common/header/composables/useHeader";
+import LogoBlock from "@/components/LogoBlock.vue";
+import { NavItem } from "@/models/NavModels";
 
-const menuItems: MenuItem[] = [
+const navItems: NavItem[] = [
   { title: "Home", path: "/" },
   { title: "About Us", path: "/about" },
   { title: "Services", path: "/services" },
   { title: "Contact", path: "/contact" },
 ];
 
-const { isMobile, density, navColor, textColor, sidebar, toggleSidebar } = useHeader(menuItems);
+const { isMobile, density, navColor, textColor, sidebar, toggleSidebar } = useHeader(navItems);
 </script>
+@/models/NavModels

@@ -7,6 +7,6 @@
 </template>
 
 <script lang="ts" setup>
-import TheHeader from "@/components/common/TheHeader.vue";
-import TheFooter from "@/components/common/TheFooter.vue";
+import TheHeader from "@/components/common/header/TheHeader.vue";
+import TheFooter from "@/components/common/footer/TheFooter.vue";
 </script>
