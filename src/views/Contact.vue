@@ -1,6 +1,3 @@
-<template>
-  Contact Page
-</template>
+<template>Contact Page</template>
 
-<script lang="ts" setup>
-</script>
+<script lang="ts" setup></script>

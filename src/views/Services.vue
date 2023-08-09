@@ -1,6 +1,3 @@
-<template>
-  Services Page
-</template>
+<template>Services Page</template>
 
-<script lang="ts" setup>
-</script>
+<script lang="ts" setup></script>

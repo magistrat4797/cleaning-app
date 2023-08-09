@@ -1,6 +1,3 @@
-<template>
-  About Page
-</template>
+<template>About Page</template>
 
-<script lang="ts" setup>
-</script>
+<script lang="ts" setup></script>
