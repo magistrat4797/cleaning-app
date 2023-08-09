@@ -1,0 +1,66 @@
+html {
+  font-family: $base-font;
+  font-weight: $base-font-weight;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  color: #000;
+  font-size: $base-font-size;
+  overflow-x: hidden;
+}
+
+a {
+  color: $color-tertiary;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+a,
+button {
+  transition: ease-in-out 0.3s !important;
+}
+
+.font-default {
+  font-family: $base-font !important;
+}
+
+.v-container {
+  max-width: 1200px !important;
+}
+.text-none {
+  text-transform: none !important;
+}
+
+$breakpoints: (
+  "": 0px,
+  "sm": 600px,
+  "md": 960px,
+  "lg": 1280px,
+  "xl": 1920px,
+);
+
+$sizes: 16, 18, 20;
+
+@each $name, $size in $breakpoints {
+  @each $fontsize in $sizes {
+    @if $name == "" {
+      .text-#{$fontsize} {
+        font-size: #{$fontsize}px !important;
+      }
+    } @else {
+      .text-#{$name}-#{$fontsize} {
+        @media (min-width: $size) {
+          font-size: #{$fontsize}px !important;
+        }
+      }
+    }
+  }
+}

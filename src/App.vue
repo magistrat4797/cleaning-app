@@ -1,11 +1,9 @@
 <template>
   <v-app>
-    <v-main>
-      <HelloWorld />
-    </v-main>
+    <default-view />
   </v-app>
 </template>
 
 <script setup lang="ts">
-  import HelloWorld from '@/components/HelloWorld.vue'
+import DefaultView from "@/layouts/default/View.vue";
 </script>
