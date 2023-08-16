@@ -1,5 +1,5 @@
 <template>
-  <div class="social-links-block">
+  <div class="social-links-block d-flex">
     <v-list
       class="d-flex pa-0 overflow-visible social-links"
       bg-color="transparent"
@@ -16,8 +16,6 @@
           :href="socialLink.url"
           target="_blank"
           class="social-link bg-primary"
-          width="43"
-          height="43"
           rounded="lg"
         />
       </v-list-item>
@@ -35,6 +33,12 @@
   }
 }
 .social-link {
+  width: 40px;
+  height: 40px;
+  @include sm {
+    width: 43px;
+    height: 43px;
+  }
   &:hover {
     background: $bg-color-tertiary !important;
   }

@@ -1,0 +1,67 @@
+// e.g. assets/scss/mixin/vuetify-media.scss
+
+$sm-breakpoint: 600px;
+$md-breakpoint: 960px;
+$lg-breakpoint: 1280px;
+$xl-breakpoint: 1920px;
+$xxl-breakpoint: 2560px;
+
+@mixin xs {
+  @media only screen and (max-width: ($sm-breakpoint - 1)) {
+    @content;
+  }
+}
+
+@mixin sm-only {
+  @media screen and (min-width: $sm-breakpoint) and (max-width: ($md-breakpoint - 1)) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media screen and (min-width: $sm-breakpoint) {
+    @content;
+  }
+}
+
+@mixin md-only {
+  @media screen and (min-width: $md-breakpoint) and (max-width: ($lg-breakpoint - 1)) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (min-width: $md-breakpoint) {
+    @content;
+  }
+}
+
+@mixin lg-only {
+  @media screen and (min-width: $lg-breakpoint) and (max-width: ($xl-breakpoint - 1)) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (min-width: $lg-breakpoint) {
+    @content;
+  }
+}
+
+@mixin xl-only {
+  @media screen and (min-width: $xl-breakpoint) and (max-width: ($xxl-breakpoint - 1)) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media screen and (min-width: $xl-breakpoint) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media only screen and (min-width: $xxl-breakpoint) {
+    @content;
+  }
+}
