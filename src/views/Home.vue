@@ -1,5 +1,5 @@
 <template>
-  <div style="min-height: 100vh">Homepage</div>
+  <hero-box/>
   <newsletter-box>
     <template #title> Subscribe To Our News Letter </template>
     <template #text>
@@ -9,5 +9,6 @@
 </template>
 
 <script lang="ts" setup>
-import NewsletterBox from "@/components/NewsletterBox.vue";
+import HeroBox from "@/components/hero/HeroBox.vue";
+import NewsletterBox from "@/components/newsletter/NewsletterBox.vue";
 </script>

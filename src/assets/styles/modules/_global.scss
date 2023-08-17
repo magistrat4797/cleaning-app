@@ -1,3 +1,5 @@
+
+@use "sass:math";
 html {
   font-family: $base-font;
   font-weight: $base-font-weight;
@@ -47,7 +49,17 @@ $breakpoints: (
   "xl": 1920px,
 );
 
-$sizes: 13, 14, 15, 16, 18, 20;
+// $sizes: 13, 14, 15, 16, 17, 18, 19, 20, 22, 24, 26, 28, 30, 32;
+
+@function range($from, $through, $step: 1) {
+  $range: ();
+  @for $i from $from through math.div($through, $step) {
+    $range: append($range, $i * $step);
+  }
+  @return $range;
+}
+
+$sizes: range(13, 32);
 
 @each $name, $size in $breakpoints {
   @each $fontsize in $sizes {
