@@ -2,7 +2,10 @@
   <div class="footer-info">
     <v-row no-gutters>
       <v-col>
-        <logo-block color="white" />
+        <logo-block
+          class="justify-center mb-3 mb-md-0 justify-md-start"
+          color="white"
+        />
       </v-col>
     </v-row>
     <v-row no-gutters>
@@ -15,16 +18,10 @@
         </footer-text-block>
       </v-col>
     </v-row>
-    <v-row no-gutters>
-      <v-col>
-        <footer-social-links />
-      </v-col>
-    </v-row>
   </div>
 </template>
 
 <script setup lang="ts">
 import FooterTextBlock from "@/components/common/footer/components/FooterTextBlock.vue";
-import FooterSocialLinks from "@/components/common/footer/components/FooterSocialLinks.vue";
 import LogoBlock from "@/components/LogoBlock.vue";
 </script>

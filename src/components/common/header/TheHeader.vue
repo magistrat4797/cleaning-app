@@ -11,7 +11,7 @@
         <v-col class="v-col-auto">
           <logo-block :color="textColor" />
         </v-col>
-        <v-spacer/>
+        <v-spacer />
         <v-col class="v-col-auto">
           <v-app-bar-nav-icon
             v-if="isMobile"

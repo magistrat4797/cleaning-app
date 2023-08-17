@@ -47,7 +47,7 @@ $breakpoints: (
   "xl": 1920px,
 );
 
-$sizes: 16, 18, 20;
+$sizes: 13, 14, 15, 16, 18, 20;
 
 @each $name, $size in $breakpoints {
   @each $fontsize in $sizes {
