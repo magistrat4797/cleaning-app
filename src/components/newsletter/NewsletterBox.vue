@@ -1,5 +1,5 @@
 <template>
-  <div class="newsletter-box py-6 py-md-8">
+  <section class="newsletter-box py-6 py-md-8">
     <v-container class="py-0">
       <div class="newsletter bg-primary pa-4 py-md-6 px-md-8 px-lg-12 rounded-lg">
         <v-row align="center" no-gutters>
@@ -22,12 +22,13 @@
                 type="email"
                 hide-details
               />
+              <base-button type="submit" icon="fa-solid fa-paper-plane" />
             </form>
           </v-col>
         </v-row>
       </div>
     </v-container>
-  </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
@@ -47,6 +48,8 @@
 
 <script setup lang="ts">
 import { useSlots } from "vue";
+
+import BaseButton from "@/components/base/BaseButton.vue";
 
 const slots = useSlots();
 </script>

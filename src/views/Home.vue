@@ -1,5 +1,11 @@
 <template>
-  <hero-box/>
+  <hero-box>
+    <template #subtitle>Highly Professional Cleaning</template>
+    <template #title><span class="text-primary">Easy To Clean</span> House And Office</template>
+    <template #text>
+      Amet minim mollit non deserunt ullamco  sit aliqua dolor do amet sint. Velit officia enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+    </template>
+  </hero-box>
   <newsletter-box>
     <template #title> Subscribe To Our News Letter </template>
     <template #text>

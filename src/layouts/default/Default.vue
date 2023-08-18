@@ -1,9 +1,12 @@
 <template>
-  <v-app>
-    <default-view />
-  </v-app>
+  <the-header />
+  <v-main>
+    <router-view />
+  </v-main>
+  <the-footer />
 </template>
 
 <script lang="ts" setup>
-import DefaultView from "./View.vue";
+import TheHeader from "@/components/common/header/TheHeader.vue";
+import TheFooter from "@/components/common/footer/TheFooter.vue";
 </script>

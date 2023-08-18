@@ -4,7 +4,6 @@
     :density="density"
     :class="navColor"
     class="header"
-    id="header"
     elevation="0"
   >
     <v-container class="py-0 h-100">

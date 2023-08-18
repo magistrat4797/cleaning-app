@@ -1,26 +1,35 @@
 <template>
-  <div class="hero-box" :style="topSpacing">
+  <section class="hero-box">
     <v-container class="py-0">
-      <p class="hero-box__subtitle">Highly Professional Cleaning</p>
-      <h1 class="hero-box__title">Easy To Clean House And Office</h1>
-      <p class="hero-box__info">Amet minim mollit non deserunt ullamco  sit aliqua dolor do amet sint. Velit officia enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-      <a href="#">Get a Quote</a>
+      
+      <p v-if="slots.subtitle" class="hero-box__subtitle"><slot name="subtitle" /></p>
+
+      <h1 v-if="slots.title" class="hero-box__title"><slot name="title" /></h1>
+      <p v-if="slots.text" class="hero-box__text"><slot name="text" /></p>
+      <base-link to="/contact">Get a Quote</base-link>
     </v-container>
-  </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
+@import "@/assets/styles/styles.scss";
   .hero-box {
+    background: url('@/assets/images/hero-bg.png') center no-repeat;
+    background-size: cover;
     min-height: 100vh;
-    background: lightblue;
-    
+    margin-top: -64px;
+    padding-top: 64px;
+    @include lg {
+      margin-top: -128px;
+      padding-top: 128px;
+    }
   }
 </style>
 
 <script setup lang="ts">
-import useHeaderHeight from "@/components/common/header/composables/useHeaderHeight";
-import useHeroStyle from "@/components/hero/composables/useHeroStyle";
-const { headerHeight } = useHeaderHeight();
-const { topSpacing } = useHeroStyle(headerHeight);
+import { useSlots } from "vue";
 
+import BaseLink from "@/components/base/BaseLink.vue";
+
+const slots = useSlots();
 </script>
