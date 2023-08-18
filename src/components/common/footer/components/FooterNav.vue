@@ -56,7 +56,6 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from "vue";
 import { NavItemGroup } from "@/models/NavModels";
 
 const props = defineProps({

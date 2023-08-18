@@ -6,8 +6,8 @@
     class="header"
     elevation="0"
   >
-    <v-container class="d-flex py-0 h-100">
-      <v-row align="center" no-gutters>
+    <v-container class="py-0 h-100">
+      <v-row align="center" no-gutters class="h-100">
         <v-col class="v-col-auto">
           <logo-block :color="textColor" />
         </v-col>
@@ -17,6 +17,7 @@
             v-if="isMobile"
             @click="toggleSidebar"
             :ripple="false"
+            class="w-auto"
           />
           <v-toolbar-items v-else>
             <v-btn
@@ -93,7 +94,7 @@
 
 <script setup lang="ts">
 import useHeader from "@/components/common/header/composables/useHeader";
-import LogoBlock from "@/components/LogoBlock.vue";
+import LogoBlock from "@/components/logo/LogoBlock.vue";
 import { NavItem } from "@/models/NavModels";
 
 const navItems: NavItem[] = [
@@ -106,4 +107,3 @@ const navItems: NavItem[] = [
 const { isMobile, density, navColor, textColor, sidebar, toggleSidebar } =
   useHeader(navItems);
 </script>
-@/models/NavModels

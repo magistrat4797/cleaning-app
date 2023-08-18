@@ -3,7 +3,7 @@
     <v-row no-gutters>
       <v-col>
         <logo-block
-          class="justify-center mb-3 mb-md-0 justify-md-start"
+          class="justify-center justify-md-start"
           color="white"
         />
       </v-col>
@@ -23,5 +23,5 @@
 
 <script setup lang="ts">
 import FooterTextBlock from "@/components/common/footer/components/FooterTextBlock.vue";
-import LogoBlock from "@/components/LogoBlock.vue";
+import LogoBlock from "@/components/logo/LogoBlock.vue";
 </script>

@@ -1,5 +1,11 @@
 <template>
-  <div style="min-height: 100vh">Homepage</div>
+  <hero-box>
+    <template #subtitle>Highly Professional Cleaning</template>
+    <template #title><span class="text-primary">Easy To Clean</span> House And Office</template>
+    <template #text>
+      Amet minim mollit non deserunt ullamco  sit aliqua dolor do amet sint. Velit officia enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+    </template>
+  </hero-box>
   <newsletter-box>
     <template #title> Subscribe To Our News Letter </template>
     <template #text>
@@ -9,5 +15,6 @@
 </template>
 
 <script lang="ts" setup>
-import NewsletterBox from "@/components/NewsletterBox.vue";
+import HeroBox from "@/components/hero/HeroBox.vue";
+import NewsletterBox from "@/components/newsletter/NewsletterBox.vue";
 </script>
