@@ -21,6 +21,7 @@
                   label="Enter Your Email"
                   class="bg-transparent newsletter__input"
                   type="email"
+                  required
                   hide-details
                 />
                 <button type="submit" class="newsletter__btn bg-white text-primary rounded">

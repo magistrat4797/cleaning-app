@@ -1,10 +1,14 @@
 <template>
   <section class="hero-box">
     <v-container class="py-0">
-      
-      <p v-if="slots.subtitle" class="hero-box__subtitle"><slot name="subtitle" /></p>
-
-      <h1 v-if="slots.title" class="hero-box__title"><slot name="title" /></h1>
+      <base-heading v-if="slots.subtitle || slots.title" position="left">
+        <template v-if="slots.subtitle" #subtitle>
+          <h3 class="hero-box__subtitle font-weight-regular"><slot name="subtitle" /></h3>
+        </template>
+        <template v-if="slots.title" #title>
+          <h1 class="hero-box__title"><slot name="title" /></h1>
+        </template>
+      </base-heading>
       <p v-if="slots.text" class="hero-box__text"><slot name="text" /></p>
       <base-link to="/contact">Get a Quote</base-link>
     </v-container>
@@ -30,6 +34,7 @@
 import { useSlots } from "vue";
 
 import BaseLink from "@/components/base/BaseLink.vue";
+import BaseHeading from "@/components/base/BaseHeading.vue";
 
 const slots = useSlots();
 </script>
