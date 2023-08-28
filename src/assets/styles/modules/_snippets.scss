@@ -1,0 +1,60 @@
+@use "sass:math";
+
+$breakpoints: (
+  "": 0px,
+  "sm": 600px,
+  "md": 960px,
+  "lg": 1280px,
+  "xl": 1920px,
+);
+
+// Font-size snippet
+@function range($from, $through, $step: 1) {
+  $range: ();
+  $i: $from;
+
+  @while $i <= $through {
+    $range: append($range, $i);
+    $i: $i + $step;
+  }
+
+  @return $range;
+}
+
+$sizes: range(13, 32);
+
+@each $name, $size in $breakpoints {
+  @each $fontsize in $sizes {
+    @if $name == "" {
+      .text-#{$fontsize} {
+        font-size: #{$fontsize}px !important;
+      }
+    } @else {
+      .text-#{$name}-#{$fontsize} {
+        @media (min-width: $size) {
+          font-size: #{$fontsize}px !important;
+        }
+      }
+    }
+  }
+}
+
+
+// Width snippet
+$widths: join(range(25, 100, 25), 33 66);
+
+@each $name, $size in $breakpoints {
+  @each $width in $widths {
+    @if $name == "" {
+      .w-#{$width} {
+        width: #{$width + '%'} !important;
+      }
+    } @else {
+      .w-#{$name}-#{$width} {
+        @media (min-width: $size) {
+          width: #{$width + '%'} !important;
+        }
+      }
+    }
+  }
+}

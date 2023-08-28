@@ -1,5 +1,5 @@
 <template>
-  <hero-box>
+  <hero-box :hasImage="true">
     <template #subtitle>Highly Professional Cleaning</template>
     <template #title><span class="text-primary">Easy To Clean</span> House And Office</template>
     <template #text>

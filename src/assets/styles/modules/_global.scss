@@ -1,5 +1,4 @@
 
-@use "sass:math";
 html {
   font-family: $base-font;
   font-weight: $base-font-weight;
@@ -44,40 +43,4 @@ button {
 h1,h2,h3,h4,h5,h6 {
   font-size: inherit;
   font-weight: inherit;
-}
-
-$breakpoints: (
-  "": 0px,
-  "sm": 600px,
-  "md": 960px,
-  "lg": 1280px,
-  "xl": 1920px,
-);
-
-// $sizes: 13, 14, 15, 16, 17, 18, 19, 20, 22, 24, 26, 28, 30, 32;
-
-@function range($from, $through, $step: 1) {
-  $range: ();
-  @for $i from $from through math.div($through, $step) {
-    $range: append($range, $i * $step);
-  }
-  @return $range;
-}
-
-$sizes: range(13, 32);
-
-@each $name, $size in $breakpoints {
-  @each $fontsize in $sizes {
-    @if $name == "" {
-      .text-#{$fontsize} {
-        font-size: #{$fontsize}px !important;
-      }
-    } @else {
-      .text-#{$name}-#{$fontsize} {
-        @media (min-width: $size) {
-          font-size: #{$fontsize}px !important;
-        }
-      }
-    }
-  }
 }
