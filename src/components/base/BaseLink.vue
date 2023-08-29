@@ -20,17 +20,22 @@
 <style lang="scss" scoped>
 @import "@/assets/styles/styles.scss";
 
-  .btn {
-    min-height: 40px;
-    background-color: $bg-color-primary;
-    &:hover {
-      background-color: $bg-color-secondary;
-    }
+$btn-height: 45px;
+$btn-height-desktop: 50px;
+.btn {
+  min-height: $btn-height;
+  background-color: $bg-color-primary;
+  @include md {
+    min-height: $btn-height-desktop;
   }
+  &:hover {
+    background-color: $bg-color-secondary;
+  }
+}
 </style>
 
 <script setup lang="ts">
-const linkClasses = 'btn d-inline-flex align-center px-4 rounded-pill text-white';
+const linkClasses = 'btn d-inline-flex align-center px-6 px-md-8 rounded-pill text-white';
 
 defineProps({
   to: { type: String, required: true },
