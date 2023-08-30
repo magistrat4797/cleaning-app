@@ -1,11 +1,15 @@
 <template>
   <section class="newsletter-box py-6 py-md-8">
     <v-container class="py-0">
-      <div class="newsletter bg-primary pa-4 py-md-6 px-md-8 px-lg-12 rounded-lg">
+      <div
+        class="newsletter bg-primary pa-4 py-md-6 px-md-8 px-lg-12 rounded-lg"
+      >
         <v-row align="center" no-gutters>
           <v-col class="pa-0" cols="12" md="6">
             <div v-if="slots.title" class="text-center text-md-left">
-              <h3 class="newsletter__title mb-2 mb-md-0 text-28 text-sm-28 text-lg-32 font-weight-bold">
+              <h3
+                class="newsletter__title mb-2 mb-md-0 text-28 text-sm-28 text-lg-32 font-weight-bold"
+              >
                 <slot name="title" />
               </h3>
               <p class="newsletter__text text-17 text-md-18">
@@ -24,7 +28,10 @@
                   required
                   hide-details
                 />
-                <button type="submit" class="newsletter__btn bg-white text-primary rounded">
+                <button
+                  type="submit"
+                  class="newsletter__btn bg-white text-primary rounded"
+                >
                   <font-awesome-icon icon="fa-solid fa-paper-plane" />
                 </button>
               </div>
@@ -74,8 +81,9 @@ $btn-width-md: 56px;
     right: 0;
     top: 0;
     bottom: 0;
-    &:hover, &:active {
-      color: $color-secondary!important;
+    &:hover,
+    &:active {
+      color: $color-secondary !important;
     }
   }
 }

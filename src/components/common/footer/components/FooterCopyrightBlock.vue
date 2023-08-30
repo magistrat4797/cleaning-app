@@ -1,7 +1,9 @@
 <template>
   <div class="footer-copyright-block mt-2 mt-md-10">
     <div class="text-center position-relative copyright-text-block">
-      <p class="d-inline-block px-2 px-sm-4 text-14 text-sm-15 text-md-16 bg-secondary">
+      <p
+        class="d-inline-block px-2 px-sm-4 text-14 text-sm-15 text-md-16 bg-secondary"
+      >
         <slot />
       </p>
     </div>

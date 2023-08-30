@@ -39,7 +39,6 @@ $sizes: range(13, 32);
   }
 }
 
-
 // Width snippet
 $widths: join(range(25, 100, 25), 33 66);
 
@@ -47,12 +46,12 @@ $widths: join(range(25, 100, 25), 33 66);
   @each $width in $widths {
     @if $name == "" {
       .w-#{$width} {
-        width: #{$width + '%'} !important;
+        width: #{$width + "%"} !important;
       }
     } @else {
       .w-#{$name}-#{$width} {
         @media (min-width: $size) {
-          width: #{$width + '%'} !important;
+          width: #{$width + "%"} !important;
         }
       }
     }

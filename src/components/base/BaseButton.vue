@@ -27,13 +27,14 @@ $btn-height-desktop: 50px;
 </style>
 
 <script setup lang="ts">
-const linkClasses = 'btn d-inline-flex align-center px-4 rounded-pill text-white';
+const linkClasses =
+  "btn d-inline-flex align-center px-4 rounded-pill text-white";
 
 defineProps({
   type: {
-    type: String as () => 'button' | 'submit' | 'reset',
-    default: 'button'
+    type: String as () => "button" | "submit" | "reset",
+    default: "button",
   },
-  icon: String
+  icon: String,
 });
 </script>

@@ -2,10 +2,7 @@
   <div class="footer-info">
     <v-row no-gutters>
       <v-col>
-        <logo-block
-          class="justify-center justify-md-start"
-          color="white"
-        />
+        <logo-block class="justify-center justify-md-start" color="white" />
       </v-col>
     </v-row>
     <v-row no-gutters>

@@ -35,12 +35,13 @@ $btn-height-desktop: 50px;
 </style>
 
 <script setup lang="ts">
-const linkClasses = 'btn d-inline-flex align-center px-6 px-md-8 rounded-pill text-white';
+const linkClasses =
+  "btn d-inline-flex align-center px-6 px-md-8 rounded-pill text-white";
 
 defineProps({
   to: { type: String, required: true },
   icon: String,
   target: String,
-  external: Boolean
+  external: Boolean,
 });
 </script>
