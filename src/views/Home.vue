@@ -1,10 +1,10 @@
 <template>
   <hero-box :hasImage="true">
     <template #subtitle>Highly Professional Cleaning</template>
-    <template #title
-      ><span class="text-primary">Easy To Clean</span><br />House And
-      Office</template
-    >
+    <template #title>
+      <span class="text-primary">Easy To Clean</span><br />House And
+      Office
+    </template>
     <template #text>
       Amet minim mollit non deserunt ullamco sit aliqua dolor do amet sint.
       Velit officia enim velit mollit. Exercitation veniam consequat sunt
@@ -38,11 +38,11 @@ import GiantIcon from "@/assets/images/partners/giant.svg";
 import DiggIcon from "@/assets/images/partners/digg.svg";
 
 const partners = [
-  { name: "jquery", icon: JqueryIcon },
-  { name: "bridgestone", icon: BridgestoneIcon },
-  { name: "dash", icon: DashIcon },
-  { name: "dunlop", icon: DunlopIcon },
-  { name: "giant", icon: GiantIcon },
-  { name: "digg", icon: DiggIcon },
+  { name: "jquery", logo: JqueryIcon },
+  { name: "bridgestone", logo: BridgestoneIcon },
+  { name: "dash", logo: DashIcon },
+  { name: "dunlop", logo: DunlopIcon },
+  { name: "giant", logo: GiantIcon },
+  { name: "digg", logo: DiggIcon },
 ];
 </script>

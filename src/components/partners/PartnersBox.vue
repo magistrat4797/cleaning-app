@@ -10,7 +10,7 @@
             v-for="partner in partners"
             :key="partner.name"
           >
-            <component :is="partner.icon" />
+            <component :is="partner.logo" />
           </div>
         </div>
       </v-container>
@@ -50,8 +50,13 @@ $partner-padding-desktop: math.div($partners-gap-desktop, 2);
 </style>
 
 <script setup lang="ts">
+import { PropType } from 'vue';
+import { Partner } from '@/models/Partner'
+
 defineProps({
-  hasImage: Boolean,
-  partners: Array,
+  partners: {
+    type: Array as PropType<Partner[]>,
+    default: () => ([]),
+  },
 });
 </script>
