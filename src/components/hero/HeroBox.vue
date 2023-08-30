@@ -17,7 +17,9 @@
           </div>
         </div>
         <div class="hero-box__image d-none h-100 d-md-flex align-md-end w-md-50" v-if="hasImage">
-          <img src="@/assets/images/hero-img.png" />
+          <div class="hero-box__image-inner position-relative d-flex">
+            <img src="@/assets/images/hero-img.png" />
+          </div>
         </div>
       </div>
     </v-container>
@@ -54,11 +56,52 @@ $content-max-width: 470px;
     &__content {
       margin-top: -$header-height;
       z-index: 1;
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        @include md {
+          display: none;
+        }
+      }
+      &::before {
+        left: 7%;
+        top: 15%;
+        width: 60px;
+        height: 90px;
+        background: url('@/assets/images/sequins.svg') no-repeat;
+      }
+      &::after {
+        right: 7%;
+        bottom: 10%;
+        width: 80px;
+        height: 125px;
+        background: url('@/assets/images/sequins-2.svg') no-repeat;
+      }
       &-inner {
         max-width: $content-max-width;
       }
     }
     &__image {
+      &-inner {
+        &::before, &::after {
+          content: '';
+          position: absolute;
+        }
+        &::before {
+          left: 36%;
+          top: 17%;
+          width: 60px;
+          height: 90px;
+          background: url('@/assets/images/sequins.svg') no-repeat;
+        }
+        &::after {
+          right: -6%;
+          top: 27%;
+          width: 80px;
+          height: 125px;
+          background: url('@/assets/images/sequins-2.svg') no-repeat;
+        }
+      }
       img {
         width: 100%;
         object-fit: cover;
